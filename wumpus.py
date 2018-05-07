@@ -28,7 +28,7 @@ while needit:
 		world[row][col] = 'p'
 		needit = False
 
-# Hide the bat(b)
+# Hide the bat (b)
 needit = True
 while needit:
 	row = random.randint(1, 5)
@@ -37,7 +37,7 @@ while needit:
 		world[row][col] = 'b'
 		needit = False
 
-# Place the user (u) in a safe spot.
+# Place the user in a safe spot.
 needit = True
 while needit:
 	row = random.randint(1, 5)
@@ -73,11 +73,10 @@ while alive:
 
 	# Ask user what to do next (n/s/e/w/f).
 	print('What do you want to do next?')
-	print('You can type "n", "s", "e", or "w" to move, and "f" to fire an arrow.')
+	print('You can type "n", "s", "e", or "w" to move, or "f" to fire an arrow.')
 	action = input()
 
-	# If it is a direction then...
-	# ... move him.
+	# If direction, move
 	if action == 'n':
 		userRow = userRow - 1
 	if action == 's':
@@ -90,11 +89,12 @@ while alive:
 	# Do not allow user to walk off the face of the Earth.
 	if userRow == 0:
 		userRow = 5
-	if userRow == 6:
+	elif userRow == 6:
 		userRow = 1
+
 	if userCol == 9:
 		userCol = 1
-	if userCol == 0:
+	elif userCol == 0:
 		userCol = 8
 
 	# If wumpus then user dies.
@@ -161,5 +161,3 @@ while alive:
 			print('You wumped the wumpus...')
 			print('You win!!!!')
 			alive = False
-
-		# Ask user if he wants to play again.
